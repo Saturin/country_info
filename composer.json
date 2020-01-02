@@ -1,0 +1,20 @@
+{
+    "name": "saturin/country_info",
+    "description": "get information about country from soap api",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "license": "Mit",
+    "authors": [
+        {
+            "name": "Dawid Walaszkowski",
+            "email": "dawalasz@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "App/"
+        ]
+    }
+}
