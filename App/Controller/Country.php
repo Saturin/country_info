@@ -57,7 +57,11 @@ class Country
         $resp = [];
         if(isset($_REQUEST['type']) && $_REQUEST['text']) {
             $this->checkCache();
-            $con = json_decode(file_get_contents(MAINPATH . "/App/Cache/countrylist.json"),true);
+            if($_REQUEST['type'] !='lang') {
+                $con = json_decode(file_get_contents(MAINPATH . "/App/Cache/countrylist.json"),true);
+            } else {
+                $con = json_decode(file_get_contents(MAINPATH . "/App/Cache/countrylistfull.json"),true);
+            }
 
             foreach ($con as &$item) {
                  if ($_REQUEST['type'] == "name") {
@@ -68,6 +72,22 @@ class Country
                      if(strpos($item['sISOCode'], strtoupper($_GET['text'])) !==false) {
                          $resp[] = $item;
                      }
+                 } elseif ($_REQUEST['type']=='lang') {
+
+                     foreach ($item["Languages"] as $lang ) {
+                        if(isset($lang[0])) {
+                            foreach ($lang as $l ) {
+                                if(strpos($l['sName'], $_REQUEST['text'])!==false) {
+                                    $resp[] = $item;
+                                }
+                            }
+                        } else {
+                            if(strpos($lang['sName'], $_REQUEST['text'])!==false) {
+                                $resp[] = $item;
+                            }
+                        }
+                     }
+
                  }
             }
         }

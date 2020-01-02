@@ -26,9 +26,6 @@ Class App
         $template = MAINPATH . "App/View/".self::Controller."/".$method.".twig";
 
 
-//        if(!file_exists($template)) {
-//            die("404 2");
-//        }
 
         if(!file_exists(MAINPATH . "App/Controller/" . self::Controller . ".php")) {
             die("404 3");
@@ -37,6 +34,7 @@ Class App
         $page = new Country();
 
         if(!method_exists($page, $method)) {
+            die($method);
             die("404 4");
         }
 
