@@ -1,3 +1,4 @@
 .idea/
 
 /vendor/
+/gulp-country/node_modules/

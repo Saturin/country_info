@@ -1,0 +1,50 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+    <script>
+        let selected = "{{ selected }}";
+    </script>
+
+    <div class="wrapper__line">
+
+
+        <div>
+            <label for="search">Wyszukaj: </label>
+            <input id="search" type="text">
+        </div>
+
+        <div>
+            <select name="" id="type">
+                <option value="code">Kod ISO</option>
+                <option value="name">Nazwa</option>
+                <option value="lang">Język</option>
+            </select>
+        </div>
+        
+        <div style="width: 20%; text-align: right">
+            <a href="./list">Lista Krajów</a>
+        </div>
+    </div>
+    <hr>
+    <div class="wrapper__line">
+        <table>
+            <tr>
+                <th rowspan="3">  <div id="country" class="active"></div></th>
+            </tr>
+            <tr>
+                <th>Stolica:</th><td><span id="capital"></span></td>
+                <th>Kontynent:</th><td><span id="continent"></span></td>
+                <th>Flaga:</th><td><img style="width: 70px;" src="" id="flag"></td>
+            </tr>
+            <tr>
+                <th>Waluta:</th><td><span id="currency"></span></td>
+                <th>Numer tel:</th><td><span id="prefix"></span></td>
+                <th>Języki</th><td><span id="languages"></span></td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <script src="./App/assets/js/country.js"></script>
+{% endblock body %}

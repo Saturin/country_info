@@ -1,3 +1,14 @@
-<h1>
-    {{ powitanie }}
-</h1>
+{% extends "layout.twig" %}
+
+{% block body %}
+
+    <div class="wrapper__line" style="text-align: right">
+        <a href="/country">Wyszukiwarka</a>
+    </div>
+    <div class="lista">
+
+    </div>
+
+    <script src="./App/assets/js/tableSort.js"></script>
+    <script src="./App/assets/js/index.js"></script>
+{% endblock body %}
