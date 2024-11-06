@@ -3,7 +3,7 @@
     "description": "get information about country from soap api",
     "type": "project",
     "require": {
-        "twig/twig": "2.*",
+        "twig/twig": "3.*",
         "ext-json": "*"
     },
     "license": "Mit",
